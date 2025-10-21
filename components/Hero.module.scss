@@ -1,0 +1,99 @@
+/* components/Hero.module.scss */
+@import '../styles/variables';
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: $heading-color; /* Fallback */
+  color: white;
+}
+
+.backgroundImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3; /* This creates the dark overlay effect */
+}
+
+.content {
+  position: relative; /* On top of the background image */
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem; // Mobile padding
+  text-align: center;
+  
+  @media (min-width: 768px) {
+    padding: 8rem 1rem; // Desktop padding
+  }
+}
+
+.title {
+  font-size: 2.5rem; // 40px
+  font-weight: 800;
+  margin-bottom: 1rem;
+  
+  @media (min-width: 768px) {
+    font-size: 3.75rem; // 60px
+  }
+}
+
+.subtitle {
+  font-size: 1.25rem; // 20px
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column; // Mobile-first (stacked)
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row; // Desktop (side-by-side)
+    gap: 1.5rem;
+  }
+}
+
+// Base button style
+.button {
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  cursor: pointer;
+  border: 2px solid transparent;
+
+  &:hover { text-decoration: none; }
+}
+
+.ctaButtonPrimary {
+  @extend .button; // Use Sass 'extend' to share styles
+  background-color: $secondary-color;
+  color: white;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+    transform: scale(1.05);
+  }
+}
+
+.ctaButtonSecondary {
+  @extend .button;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+
+  &:hover {
+    background-color: white;
+    color: $primary-color;
+  }
+}

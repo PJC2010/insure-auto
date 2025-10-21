@@ -1,0 +1,61 @@
+/* components/Footer.module.scss */
+@import '../styles/variables';
+
+.footer {
+  background-color: $heading-color;
+  color: #D1D5DB; // Light gray
+  padding: 3rem 1rem 0;
+}
+
+.grid {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  // Mobile-first: 1 column
+  grid-template-columns: 1fr; 
+
+  // Desktop: 3 columns
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.column {
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    color: #9CA3AF;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  a {
+    color: #D1D5DB;
+    &:hover {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+}
+
+.copyrightBar {
+  border-top: 1px solid #374151; // Darker border
+  margin-top: 2.5rem;
+  padding: 1.5rem 0;
+  text-align: center;
+  color: #9CA3AF; // Even lighter gray
+}
