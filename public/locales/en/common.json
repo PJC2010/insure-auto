@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "siteTitle": "InsurAuto Agency",
+    "defaultDescription": "Your Journey, Our Protection. Comprehensive Insurance for Every Aspect of Your Life."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "payments": "Payments",
+    "claims": "Claims",
+    "contact": "Contact Us",
+    "getQuote": "Get a Quote",
+    "toggle": "Toggle navigation"
+  },
+  "footer": {
+    "companyName": "InsurAuto Agency",
+    "tagline": "Your Journey, Our Protection. Providing comprehensive insurance for auto, home, and business.",
+    "quickLinks": "Quick Links",
+    "aboutUs": "About Us",
+    "services": "Services",
+    "fileClaim": "File a Claim",
+    "contact": "Contact",
+    "getQuote": "Get a Quote",
+    "contactUs": "Contact Us",
+    "addressLine1": "123 Insurance Blvd, Suite 100",
+    "addressLine2": "City, State, ZIP 12345",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "copyright": "© {{year}} InsurAuto Agency. All rights reserved."
+  },
+  "hero": {
+    "title": "Your Journey, Our Protection.",
+    "subtitle": "Comprehensive Insurance for Every Aspect of Your Life",
+    "ctaPrimary": "Get Your Free Quote",
+    "ctaSecondary": "Explore Services",
+    "imageAlt": "Happy family protected by InsurAuto insurance"
+  },
+  "home": {
+    "introTitle": "Protecting What Matters Most",
+    "introText": "At InsurAuto Agency, we understand that life's journey comes with unexpected turns. That's why we're dedicated to providing comprehensive insurance solutions tailored to your unique needs.",
+    "learnMore": "Learn More About Us →",
+    "servicesTitle": "Our Core Services",
+    "viewAllServices": "View All Services",
+    "testimonialsTitle": "What Our Clients Say",
+    "testimonialQuote": "\"InsurAuto Agency made the entire process so easy. Their team was responsive, knowledgeable, and found me the perfect auto policy at a great price. I finally feel protected!\"",
+    "testimonialAuthor": "- Placeholder Name, Local Resident",
+    "ctaTitle": "Ready to Get Started?",
+    "ctaSubtitle": "Secure your future with InsurAuto Agency today.",
+    "ctaButton": "Get Your Free Quote",
+    "services": {
+      "personalAuto": { "title": "Personal Auto Insurance", "description": "Get the right coverage for your car and family. We offer competitive rates and customized plans." },
+      "home": { "title": "Home Insurance", "description": "Safeguard your most valuable asset. Our policies provide protection against unforeseen events." },
+      "renters": { "title": "Renters Insurance", "description": "Your belongings need protection. Cover your personal property and get liability protection." }
+    }
+  },
+  "servicesPage": {
+    "title": "Our Comprehensive Insurance Services",
+    "pageTitle": "Our Services - InsurAuto Agency",
+    "services": {
+      "commercialAuto": { "title": "Commercial Auto Insurance", "description": "Protect your business vehicles and drivers with comprehensive commercial auto policies. From small fleets to large operations, we have you covered." },
+      "home": { "title": "Home Insurance", "description": "Safeguard your most valuable asset. Our home insurance policies provide protection against unforeseen events, ensuring peace of mind for homeowners." },
+      "renters": { "title": "Renters Insurance", "description": "Even if you rent, your belongings need protection. Renters insurance covers your personal property and offers liability protection at an affordable rate." },
+      "personalAuto": { "title": "Personal Auto Insurance", "description": "Get the right coverage for your car and family. We offer competitive rates and customized plans to protect you on every journey." }
+    }
+  },
+  "serviceCard": {
+    "learnMore": "Learn More"
+  },
+  "about": {
+    "pageTitle": "About InsurAuto Agency | Your Local Insurance Partner",
+    "pageDescription": "Learn about InsurAuto Agency, our mission, and our dedicated team. We are committed to protecting our community with reliable insurance solutions.",
+    "title": "About InsurAuto Agency"
+  },
+  "getAQuote": {
+    "pageTitle": "Get a Quote - InsurAuto Agency",
+    "title": "Get Your Free Insurance Quote",
+    "subtitle": "Tell us about your needs, and we'll help you find the best coverage options.",
+    "typeLabel": "What type of insurance are you looking for?",
+    "selectPlaceholder": "Select Insurance Type",
+    "types": {
+      "personal-auto": "Personal Auto Insurance",
+      "home-insurance": "Home Insurance",
+      "renters-insurance": "Renters Insurance",
+      "commercial-auto": "Commercial Auto Insurance"
+    },
+    "contactInfoTitle": "Your Contact Information",
+    "fullName": "Full Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "detailsTitle": "Details for Your {{type}} Quote",
+    "fields": {
+      "vehicleYear": "Vehicle Year",
+      "vehicleYearPlaceholder": "e.g., 2020",
+      "vehicleMake": "Vehicle Make",
+      "vehicleMakePlaceholder": "e.g., Toyota",
+      "propertyAddress": "Property Address",
+      "addressPlaceholder": "Street, City, State, ZIP",
+      "homeType": "Type of Home",
+      "homeTypeSelect": "Select",
+      "homeTypeSingleFamily": "Single Family Home",
+      "homeTypeCondo": "Condo",
+      "homeTypeTownhouse": "Townhouse",
+      "rentalAddress": "Rental Property Address",
+      "estimatedValue": "Estimated Value of Personal Property",
+      "estimatedValuePlaceholder": "e.g., 25000",
+      "businessName": "Business Name",
+      "fleetSize": "Number of Vehicles in Fleet"
+    },
+    "submit": "Get My Quote",
+    "submitting": "Submitting...",
+    "successTitle": "Thank you!",
+    "successBody": "Thank you for requesting a quote! An agent will contact you soon.",
+    "errorBody": "Something went wrong. Please try again or call us directly."
+  },
+  "contact": {
+    "pageTitle": "Contact Us - InsurAuto Agency",
+    "pageDescription": "Get in touch with InsurAuto Agency. Send us a message or find our phone number and address.",
+    "title": "Contact InsurAuto Agency",
+    "subtitle": "We're here to help! Reach out to us through the form below or using our direct contact information.",
+    "formTitle": "Send Us a Message",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "subject": "Subject",
+    "message": "Message",
+    "submit": "Submit Message",
+    "submitting": "Sending...",
+    "successTitle": "Thank you!",
+    "successBody": "Message sent! We will get back to you shortly.",
+    "errorBody": "Something went wrong. Please try again or call us directly.",
+    "infoTitle": "Our Information"
+  },
+  "claims": {
+    "title": "File an Insurance Claim",
+    "subtitle": "Please fill out the form below to initiate your claim. Our team will review your submission and contact you promptly.",
+    "yourInfoTitle": "Your Information",
+    "fullName": "Full Name",
+    "policyNumber": "Policy Number",
+    "email": "Email",
+    "phone": "Phone Number",
+    "incidentDetailsTitle": "Incident Details",
+    "incidentDate": "Date of Incident",
+    "incidentType": "Type of Incident",
+    "incidentTypeSelect": "Select Incident Type",
+    "incidentTypes": {
+      "auto-accident": "Auto Accident",
+      "property-damage": "Property Damage (Home/Renters)",
+      "theft": "Theft",
+      "medical-claim": "Medical Claim",
+      "other": "Other"
+    },
+    "description": "Description of Incident",
+    "descriptionPlaceholder": "Please provide a detailed description of what happened.",
+    "submit": "Submit Claim",
+    "successBody": "Claim submitted! An agent will review your submission shortly. (This is a demo submission)"
+  },
+  "payments": {
+    "title": "Make a Payment",
+    "subtitle": "Easily pay your insurance premiums online. Please enter your policy details below.",
+    "policyNumber": "Policy Number",
+    "policyNumberPlaceholder": "Enter your policy number",
+    "amount": "Payment Amount ($)",
+    "amountPlaceholder": "e.g., 150.00",
+    "gatewayNotice": "Payment processing integration (e.g., Stripe, PayPal) will be added here.",
+    "secureNotice": "Your financial information is secure.",
+    "submit": "Proceed to Payment",
+    "successBody": "Payment functionality coming soon! (Simulated submission)"
+  },
+  "chatbot": {
+    "greeting": "Hello! How can we help you today?",
+    "autoReply": "Thank you for your message! An employee has been notified and will respond as soon as possible.",
+    "headerTitle": "InsurAuto Chat",
+    "placeholder": "Type your message...",
+    "send": "Send",
+    "toggleOpen": "Toggle chat",
+    "close": "Close chat"
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "es": "Español",
+    "en": "English"
+  }
+}

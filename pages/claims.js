@@ -1,8 +1,12 @@
 // pages/claims.js
 import Layout from '../components/Layout';
 import { useState } from 'react';
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
+import nextI18NextConfig from '../next-i18next.config.js';
 
 export default function Claims() {
+  const { t } = useTranslation('common');
   const [formData, setFormData] = useState({
     fullName: '',
     policyNumber: '',
@@ -27,7 +31,7 @@ export default function Claims() {
     console.log('Claim Form Data:', formData);
     // In a real application, you would send this data to an API endpoint
     // e.g., using fetch or axios, which then processes the claim.
-    alert('Claim submitted! An agent will review your submission shortly. (Simulated submission)');
+    alert(t('claims.successBody'));
     setFormData({
       fullName: '',
       policyNumber: '',
@@ -42,17 +46,17 @@ export default function Claims() {
   return (
     <Layout>
       <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold text-center mb-8">File an Insurance Claim</h1>
+        <h1 className="text-4xl font-bold text-center mb-8">{t('claims.title')}</h1>
         <p className="text-center text-lg text-gray-700 mb-10">
-          Please fill out the form below to initiate your claim. Our team will review your submission and contact you promptly.
+          {t('claims.subtitle')}
         </p>
 
         <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
           <form onSubmit={handleSubmit}>
-            <h2 className="text-2xl font-semibold mb-6">Your Information</h2>
+            <h2 className="text-2xl font-semibold mb-6">{t('claims.yourInfoTitle')}</h2>
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label htmlFor="fullName" className="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
+                <label htmlFor="fullName" className="block text-gray-700 text-sm font-bold mb-2">{t('claims.fullName')}</label>
                 <input
                   type="text"
                   id="fullName"
@@ -64,7 +68,7 @@ export default function Claims() {
                 />
               </div>
               <div>
-                <label htmlFor="policyNumber" className="block text-gray-700 text-sm font-bold mb-2">Policy Number</label>
+                <label htmlFor="policyNumber" className="block text-gray-700 text-sm font-bold mb-2">{t('claims.policyNumber')}</label>
                 <input
                   type="text"
                   id="policyNumber"
@@ -79,7 +83,7 @@ export default function Claims() {
 
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">{t('claims.email')}</label>
                 <input
                   type="email"
                   id="email"
@@ -91,7 +95,7 @@ export default function Claims() {
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
+                <label htmlFor="phone" className="block text-gray-700 text-sm font-bold mb-2">{t('claims.phone')}</label>
                 <input
                   type="tel"
                   id="phone"
@@ -104,10 +108,10 @@ export default function Claims() {
               </div>
             </div>
 
-            <h2 className="text-2xl font-semibold mb-6 mt-10">Incident Details</h2>
+            <h2 className="text-2xl font-semibold mb-6 mt-10">{t('claims.incidentDetailsTitle')}</h2>
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label htmlFor="incidentDate" className="block text-gray-700 text-sm font-bold mb-2">Date of Incident</label>
+                <label htmlFor="incidentDate" className="block text-gray-700 text-sm font-bold mb-2">{t('claims.incidentDate')}</label>
                 <input
                   type="date"
                   id="incidentDate"
@@ -119,7 +123,7 @@ export default function Claims() {
                 />
               </div>
               <div>
-                <label htmlFor="incidentType" className="block text-gray-700 text-sm font-bold mb-2">Type of Incident</label>
+                <label htmlFor="incidentType" className="block text-gray-700 text-sm font-bold mb-2">{t('claims.incidentType')}</label>
                 <select
                   id="incidentType"
                   name="incidentType"
@@ -128,24 +132,24 @@ export default function Claims() {
                   onChange={handleChange}
                   required
                 >
-                  <option value="">Select Incident Type</option>
-                  <option value="auto-accident">Auto Accident</option>
-                  <option value="property-damage">Property Damage (Home/Renters)</option>
-                  <option value="theft">Theft</option>
-                  <option value="medical-claim">Medical Claim</option>
-                  <option value="other">Other</option>
+                  <option value="">{t('claims.incidentTypeSelect')}</option>
+                  <option value="auto-accident">{t('claims.incidentTypes.auto-accident')}</option>
+                  <option value="property-damage">{t('claims.incidentTypes.property-damage')}</option>
+                  <option value="theft">{t('claims.incidentTypes.theft')}</option>
+                  <option value="medical-claim">{t('claims.incidentTypes.medical-claim')}</option>
+                  <option value="other">{t('claims.incidentTypes.other')}</option>
                 </select>
               </div>
             </div>
 
             <div className="mb-6">
-              <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">Description of Incident</label>
+              <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">{t('claims.description')}</label>
               <textarea
                 id="description"
                 name="description"
                 rows="5"
                 className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder="Please provide a detailed description of what happened."
+                placeholder={t('claims.descriptionPlaceholder')}
                 value={formData.description}
                 onChange={handleChange}
                 required
@@ -169,11 +173,19 @@ export default function Claims() {
               type="submit"
               className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg w-full focus:outline-none focus:shadow-outline transition-colors"
             >
-              Submit Claim
+              {t('claims.submit')}
             </button>
           </form>
         </div>
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+    },
+  };
 }

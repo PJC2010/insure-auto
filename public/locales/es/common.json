@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "siteTitle": "InsurAuto Agency",
+    "defaultDescription": "Tu Camino, Nuestra Protección. Seguros integrales para cada aspecto de tu vida."
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "services": "Servicios",
+    "payments": "Pagos",
+    "claims": "Reclamos",
+    "contact": "Contáctanos",
+    "getQuote": "Cotizar",
+    "toggle": "Alternar navegación"
+  },
+  "footer": {
+    "companyName": "InsurAuto Agency",
+    "tagline": "Tu Camino, Nuestra Protección. Ofrecemos seguros integrales para auto, hogar y negocio.",
+    "quickLinks": "Enlaces Rápidos",
+    "aboutUs": "Sobre Nosotros",
+    "services": "Servicios",
+    "fileClaim": "Presentar un Reclamo",
+    "contact": "Contacto",
+    "getQuote": "Cotizar",
+    "contactUs": "Contáctanos",
+    "addressLine1": "123 Insurance Blvd, Suite 100",
+    "addressLine2": "Ciudad, Estado, CP 12345",
+    "phoneLabel": "Teléfono",
+    "emailLabel": "Correo electrónico",
+    "copyright": "© {{year}} InsurAuto Agency. Todos los derechos reservados."
+  },
+  "hero": {
+    "title": "Tu Camino, Nuestra Protección.",
+    "subtitle": "Seguros integrales para cada aspecto de tu vida",
+    "ctaPrimary": "Obtén tu Cotización Gratis",
+    "ctaSecondary": "Explora Nuestros Servicios",
+    "imageAlt": "Familia feliz protegida por el seguro de InsurAuto"
+  },
+  "home": {
+    "introTitle": "Protegiendo lo que Más Importa",
+    "introText": "En InsurAuto Agency, entendemos que el camino de la vida trae giros inesperados. Por eso nos dedicamos a ofrecer soluciones de seguros integrales adaptadas a tus necesidades.",
+    "learnMore": "Conoce Más Sobre Nosotros →",
+    "servicesTitle": "Nuestros Servicios Principales",
+    "viewAllServices": "Ver Todos los Servicios",
+    "testimonialsTitle": "Lo Que Dicen Nuestros Clientes",
+    "testimonialQuote": "\"InsurAuto Agency hizo que todo el proceso fuera muy fácil. Su equipo fue receptivo, conocedor, y me encontró la póliza de auto perfecta a un excelente precio. ¡Por fin me siento protegido!\"",
+    "testimonialAuthor": "- Nombre de Ejemplo, Residente Local",
+    "ctaTitle": "¿Listo para Empezar?",
+    "ctaSubtitle": "Asegura tu futuro con InsurAuto Agency hoy mismo.",
+    "ctaButton": "Obtén tu Cotización Gratis",
+    "services": {
+      "personalAuto": { "title": "Seguro de Auto Personal", "description": "Obtén la cobertura adecuada para tu auto y tu familia. Ofrecemos tarifas competitivas y planes personalizados." },
+      "home": { "title": "Seguro de Hogar", "description": "Protege tu bien más valioso. Nuestras pólizas te protegen ante eventos imprevistos." },
+      "renters": { "title": "Seguro de Inquilinos", "description": "Tus pertenencias necesitan protección. Cubre tu propiedad personal y obtén protección de responsabilidad civil." }
+    }
+  },
+  "servicesPage": {
+    "title": "Nuestros Servicios de Seguros Integrales",
+    "pageTitle": "Nuestros Servicios - InsurAuto Agency",
+    "services": {
+      "commercialAuto": { "title": "Seguro de Auto Comercial", "description": "Protege los vehículos y conductores de tu negocio con pólizas integrales de auto comercial. Desde pequeñas flotillas hasta grandes operaciones, te cubrimos." },
+      "home": { "title": "Seguro de Hogar", "description": "Protege tu bien más valioso. Nuestras pólizas de seguro de hogar te protegen ante eventos imprevistos, brindando tranquilidad a los propietarios." },
+      "renters": { "title": "Seguro de Inquilinos", "description": "Aunque rentes, tus pertenencias necesitan protección. El seguro de inquilinos cubre tu propiedad personal y ofrece protección de responsabilidad civil a una tarifa accesible." },
+      "personalAuto": { "title": "Seguro de Auto Personal", "description": "Obtén la cobertura adecuada para tu auto y tu familia. Ofrecemos tarifas competitivas y planes personalizados para protegerte en cada viaje." }
+    }
+  },
+  "serviceCard": {
+    "learnMore": "Más Información"
+  },
+  "about": {
+    "pageTitle": "Sobre InsurAuto Agency | Tu Aliado Local en Seguros",
+    "pageDescription": "Conoce InsurAuto Agency, nuestra misión y nuestro equipo dedicado. Estamos comprometidos a proteger a nuestra comunidad con soluciones de seguros confiables.",
+    "title": "Sobre InsurAuto Agency"
+  },
+  "getAQuote": {
+    "pageTitle": "Obtener Cotización - InsurAuto Agency",
+    "title": "Obtén tu Cotización de Seguro Gratis",
+    "subtitle": "Cuéntanos sobre tus necesidades y te ayudaremos a encontrar las mejores opciones de cobertura.",
+    "typeLabel": "¿Qué tipo de seguro estás buscando?",
+    "selectPlaceholder": "Selecciona el Tipo de Seguro",
+    "types": {
+      "personal-auto": "Seguro de Auto Personal",
+      "home-insurance": "Seguro de Hogar",
+      "renters-insurance": "Seguro de Inquilinos",
+      "commercial-auto": "Seguro de Auto Comercial"
+    },
+    "contactInfoTitle": "Tu Información de Contacto",
+    "fullName": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "phone": "Número de Teléfono",
+    "detailsTitle": "Detalles para tu Cotización de {{type}}",
+    "fields": {
+      "vehicleYear": "Año del Vehículo",
+      "vehicleYearPlaceholder": "ej. 2020",
+      "vehicleMake": "Marca del Vehículo",
+      "vehicleMakePlaceholder": "ej. Toyota",
+      "propertyAddress": "Dirección de la Propiedad",
+      "addressPlaceholder": "Calle, Ciudad, Estado, CP",
+      "homeType": "Tipo de Vivienda",
+      "homeTypeSelect": "Selecciona",
+      "homeTypeSingleFamily": "Casa Unifamiliar",
+      "homeTypeCondo": "Condominio",
+      "homeTypeTownhouse": "Casa Adosada",
+      "rentalAddress": "Dirección de la Propiedad Rentada",
+      "estimatedValue": "Valor Estimado de la Propiedad Personal",
+      "estimatedValuePlaceholder": "ej. 25000",
+      "businessName": "Nombre del Negocio",
+      "fleetSize": "Número de Vehículos en la Flotilla"
+    },
+    "submit": "Obtener mi Cotización",
+    "submitting": "Enviando...",
+    "successTitle": "¡Gracias!",
+    "successBody": "¡Gracias por solicitar una cotización! Un agente se pondrá en contacto contigo pronto.",
+    "errorBody": "Algo salió mal. Por favor, inténtalo de nuevo o llámanos directamente."
+  },
+  "contact": {
+    "pageTitle": "Contáctanos - InsurAuto Agency",
+    "pageDescription": "Ponte en contacto con InsurAuto Agency. Envíanos un mensaje o encuentra nuestro teléfono y dirección.",
+    "title": "Contacta a InsurAuto Agency",
+    "subtitle": "¡Estamos aquí para ayudarte! Contáctanos mediante el siguiente formulario o con nuestra información de contacto directo.",
+    "formTitle": "Envíanos un Mensaje",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "phone": "Número de Teléfono",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "submit": "Enviar Mensaje",
+    "submitting": "Enviando...",
+    "successTitle": "¡Gracias!",
+    "successBody": "¡Mensaje enviado! Nos pondremos en contacto contigo pronto.",
+    "errorBody": "Algo salió mal. Por favor, inténtalo de nuevo o llámanos directamente.",
+    "infoTitle": "Nuestra Información"
+  },
+  "claims": {
+    "title": "Presentar un Reclamo de Seguro",
+    "subtitle": "Por favor completa el siguiente formulario para iniciar tu reclamo. Nuestro equipo revisará tu solicitud y se pondrá en contacto contigo pronto.",
+    "yourInfoTitle": "Tu Información",
+    "fullName": "Nombre Completo",
+    "policyNumber": "Número de Póliza",
+    "email": "Correo Electrónico",
+    "phone": "Número de Teléfono",
+    "incidentDetailsTitle": "Detalles del Incidente",
+    "incidentDate": "Fecha del Incidente",
+    "incidentType": "Tipo de Incidente",
+    "incidentTypeSelect": "Selecciona el Tipo de Incidente",
+    "incidentTypes": {
+      "auto-accident": "Accidente Automovilístico",
+      "property-damage": "Daño a la Propiedad (Hogar/Inquilinos)",
+      "theft": "Robo",
+      "medical-claim": "Reclamo Médico",
+      "other": "Otro"
+    },
+    "description": "Descripción del Incidente",
+    "descriptionPlaceholder": "Por favor, proporciona una descripción detallada de lo sucedido.",
+    "submit": "Enviar Reclamo",
+    "successBody": "¡Reclamo enviado! Un agente revisará tu solicitud pronto. (Este es un envío de demostración)"
+  },
+  "payments": {
+    "title": "Realizar un Pago",
+    "subtitle": "Paga fácilmente tus primas de seguro en línea. Por favor ingresa los detalles de tu póliza a continuación.",
+    "policyNumber": "Número de Póliza",
+    "policyNumberPlaceholder": "Ingresa tu número de póliza",
+    "amount": "Monto del Pago ($)",
+    "amountPlaceholder": "ej. 150.00",
+    "gatewayNotice": "Aquí se integrará el procesamiento de pagos (ej. Stripe, PayPal).",
+    "secureNotice": "Tu información financiera está segura.",
+    "submit": "Proceder al Pago",
+    "successBody": "¡Función de pago próximamente disponible! (Envío simulado)"
+  },
+  "chatbot": {
+    "greeting": "¡Hola! ¿Cómo podemos ayudarte hoy?",
+    "autoReply": "¡Gracias por tu mensaje! Un empleado ha sido notificado y responderá lo antes posible.",
+    "headerTitle": "Chat de InsurAuto",
+    "placeholder": "Escribe tu mensaje...",
+    "send": "Enviar",
+    "toggleOpen": "Alternar chat",
+    "close": "Cerrar chat"
+  },
+  "languageSwitcher": {
+    "label": "Idioma",
+    "es": "Español",
+    "en": "English"
+  }
+}

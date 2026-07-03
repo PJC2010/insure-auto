@@ -1,12 +1,14 @@
 // components/Chatbot.js
 import { useState } from 'react';
+import { useTranslation } from 'next-i18next/pages';
 import styles from './Chatbot.module.scss'; // 1. Import styles
 
 export default function Chatbot() {
+  const { t } = useTranslation('common');
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [chatHistory, setChatHistory] = useState([
-    { sender: 'system', text: 'Hello! How can we help you today?' }
+    { sender: 'system', text: t('chatbot.greeting') }
   ]);
 
   const toggleChat = () => {
@@ -23,9 +25,9 @@ export default function Chatbot() {
 
     // Simulate response
     setTimeout(() => {
-      const simulatedResponse = { 
-        sender: 'system', 
-        text: "Thank you for your message! An employee has been notified and will respond as soon as possible." 
+      const simulatedResponse = {
+        sender: 'system',
+        text: t('chatbot.autoReply')
       };
       setChatHistory((prev) => [...prev, simulatedResponse]);
     }, 1000);
@@ -37,7 +39,7 @@ export default function Chatbot() {
       <button
         onClick={toggleChat}
         className={styles.chatButton}
-        aria-label="Toggle chat"
+        aria-label={t('chatbot.toggleOpen')}
       >
         {isOpen ? '✕' : '💬'}
       </button>
@@ -47,17 +49,17 @@ export default function Chatbot() {
         <div className={styles.chatWindow}>
           {/* Chat Header */}
           <div className={styles.header}>
-            <h3>InsurAuto Chat</h3>
-            <button onClick={toggleChat} className={styles.closeButton} aria-label="Close chat">
+            <h3>{t('chatbot.headerTitle')}</h3>
+            <button onClick={toggleChat} className={styles.closeButton} aria-label={t('chatbot.close')}>
               ✕
             </button>
           </div>
-          
+
           {/* Chat History */}
           <div className={styles.messageList}>
             {chatHistory.map((msg, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 // 2. Apply dynamic class names
                 className={`${styles.message} ${msg.sender === 'user' ? styles.user : styles.system}`}
               >
@@ -65,16 +67,16 @@ export default function Chatbot() {
               </div>
             ))}
           </div>
-          
+
           {/* Message Input Form */}
           <form onSubmit={handleSendMessage} className={styles.inputForm}>
             <input
               type="text"
-              placeholder="Type your message..."
+              placeholder={t('chatbot.placeholder')}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            <button type="submit">Send</button>
+            <button type="submit">{t('chatbot.send')}</button>
           </form>
         </div>
       )}

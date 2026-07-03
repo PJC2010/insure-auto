@@ -1,0 +1,19 @@
+/* components/LanguageSwitcher.module.scss */
+@import '../styles/variables';
+
+.switcher {
+  background: none;
+  border: 1px solid $text-color;
+  border-radius: 9999px;
+  padding: 0.35rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: $text-color;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: $primary-color;
+    border-color: $primary-color;
+  }
+}

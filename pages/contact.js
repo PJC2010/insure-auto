@@ -2,8 +2,12 @@
 import Layout from '../components/Layout';
 import Head from 'next/head';
 import { useState } from 'react';
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
+import nextI18NextConfig from '../next-i18next.config.js';
 
 export default function Contact() {
+  const { t } = useTranslation('common');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,9 +24,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Contact Form Data:', formData);
-    alert(
-      'Message sent! We will get back to you shortly. (This is a demo submission)'
-    );
+    alert(t('contact.successBody'));
     setFormData({
       name: '',
       email: '',
@@ -35,27 +37,26 @@ export default function Contact() {
   return (
     <Layout>
       <Head>
-        <title>Contact Us - InsurAuto Agency</title>
+        <title>{t('contact.pageTitle')}</title>
         <meta
           name="description"
-          content="Get in touch with InsurAuto Agency. Send us a message or find our phone number and address."
+          content={t('contact.pageDescription')}
         />
       </Head>
       <div className="bg-neutral-100">
         <div className="container mx-auto px-4 py-16">
           <h1 className="text-4xl font-extrabold text-center mb-8 text-neutral-900">
-            Contact InsurAuto Agency
+            {t('contact.title')}
           </h1>
           <p className="text-center text-lg text-neutral-500 mb-12 max-w-xl mx-auto">
-            We're here to help! Reach out to us through the form below or using
-            our direct contact information.
+            {t('contact.subtitle')}
           </p>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* Contact Form */}
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h2 className="text-3xl font-bold mb-6 text-primary">
-                Send Us a Message
+                {t('contact.formTitle')}
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -63,7 +64,7 @@ export default function Contact() {
                     htmlFor="name"
                     className="block text-sm font-semibold text-neutral-700 mb-1"
                   >
-                    Name *
+                    {t('contact.name')} *
                   </label>
                   <input
                     type="text"
@@ -75,13 +76,12 @@ export default function Contact() {
                     required
                   />
                 </div>
-                {/* ... (repeat for email, phone, subject) ... */}
                 <div>
                   <label
                     htmlFor="email"
                     className="block text-sm font-semibold text-neutral-700 mb-1"
                   >
-                    Email *
+                    {t('contact.email')} *
                   </label>
                   <input
                     type="email"
@@ -95,10 +95,26 @@ export default function Contact() {
                 </div>
                 <div>
                   <label
+                    htmlFor="phone"
+                    className="block text-sm font-semibold text-neutral-700 mb-1"
+                  >
+                    {t('contact.phone')}
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    className="block w-full rounded-md border-neutral-300 shadow-sm focus:border-primary focus:ring-primary"
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label
                     htmlFor="subject"
                     className="block text-sm font-semibold text-neutral-700 mb-1"
                   >
-                    Subject *
+                    {t('contact.subject')} *
                   </label>
                   <input
                     type="text"
@@ -115,7 +131,7 @@ export default function Contact() {
                     htmlFor="message"
                     className="block text-sm font-semibold text-neutral-700 mb-1"
                   >
-                    Message *
+                    {t('contact.message')} *
                   </label>
                   <textarea
                     id="message"
@@ -131,7 +147,7 @@ export default function Contact() {
                   type="submit"
                   className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition-all duration-300 transform hover:scale-105"
                 >
-                  Submit Message
+                  {t('contact.submit')}
                 </button>
               </form>
             </div>
@@ -139,7 +155,7 @@ export default function Contact() {
             {/* Contact Information */}
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h2 className="text-3xl font-bold mb-6 text-primary">
-                Our Information
+                {t('contact.infoTitle')}
               </h2>
               <div className="space-y-6 text-neutral-700 text-lg">
                 {/* ... (your existing contact info) ... */}
@@ -150,4 +166,12 @@ export default function Contact() {
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+    },
+  };
 }

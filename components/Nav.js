@@ -2,19 +2,22 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next/pages';
+import LanguageSwitcher from './LanguageSwitcher';
 import styles from './Nav.module.scss'; // 1. Import styles
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  const { t } = useTranslation('common');
 
   const links = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/services', label: 'Services' },
-    { href: '/payments', label: 'Payments' },
-    { href: '/claims', label: 'Claims' },
-    { href: '/contact', label: 'Contact Us' },
+    { href: '/', label: t('nav.home') },
+    { href: '/about', label: t('nav.about') },
+    { href: '/services', label: t('nav.services') },
+    { href: '/payments', label: t('nav.payments') },
+    { href: '/claims', label: t('nav.claims') },
+    { href: '/contact', label: t('nav.contact') },
   ];
 
   const getLinkClass = (href) => {
@@ -27,7 +30,7 @@ export default function Nav() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={styles.menuButton}
-        aria-label="Toggle navigation"
+        aria-label={t('nav.toggle')}
       >
         {isOpen ? '✕' : '☰'} {/* Simple open/close icons */}
       </button>
@@ -40,8 +43,9 @@ export default function Nav() {
           </Link>
         ))}
         <Link href="/get-a-quote" className={styles.ctaButton}>
-          Get a Quote
+          {t('nav.getQuote')}
         </Link>
+        <LanguageSwitcher />
       </nav>
 
       {/* Mobile Menu (Dropdown) */}
@@ -62,8 +66,9 @@ export default function Nav() {
             className={styles.ctaButton}
             onClick={() => setIsOpen(false)}
           >
-            Get a Quote
+            {t('nav.getQuote')}
           </Link>
+          <LanguageSwitcher />
         </nav>
       )}
     </>

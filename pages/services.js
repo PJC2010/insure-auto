@@ -2,31 +2,36 @@
 import Layout from '../components/Layout';
 import ServiceCard from '../components/ServiceCard'; // You'll create this component
 import Head from 'next/head';
+import { useTranslation } from 'next-i18next/pages';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
+import nextI18NextConfig from '../next-i18next.config.js';
 import styles from './Services.module.scss';
 
 export default function Services() {
+  const { t } = useTranslation('common');
+
   const services = [
     {
-      title: 'Commercial Auto Insurance',
-      description: 'Protect your business vehicles and drivers with comprehensive commercial auto policies. From small fleets to large operations, we have you covered.',
+      title: t('servicesPage.services.commercialAuto.title'),
+      description: t('servicesPage.services.commercialAuto.description'),
       icon: '🚚', // Placeholder icon
       link: '/get-a-quote?service=commercial-auto'
     },
     {
-      title: 'Home Insurance',
-      description: 'Safeguard your most valuable asset. Our home insurance policies provide protection against unforeseen events, ensuring peace of mind for homeowners.',
+      title: t('servicesPage.services.home.title'),
+      description: t('servicesPage.services.home.description'),
       icon: '🏠',
       link: '/get-a-quote?service=home-insurance'
     },
     {
-      title: 'Renters Insurance',
-      description: 'Even if you rent, your belongings need protection. Renters insurance covers your personal property and offers liability protection at an affordable rate.',
+      title: t('servicesPage.services.renters.title'),
+      description: t('servicesPage.services.renters.description'),
       icon: '🛋️',
       link: '/get-a-quote?service=renters-insurance'
     },
     {
-      title: 'Personal Auto Insurance',
-      description: 'Get the right coverage for your car and family. We offer competitive rates and customized plans to protect you on every journey.',
+      title: t('servicesPage.services.personalAuto.title'),
+      description: t('servicesPage.services.personalAuto.description'),
       icon: '🚗',
       link: '/get-a-quote?service=personal-auto'
     },
@@ -35,11 +40,11 @@ export default function Services() {
   return (
     <Layout>
       <Head>
-        <title>Our Services - InsurAuto Agency</title>
+        <title>{t('servicesPage.pageTitle')}</title>
         <meta /* ... */ />
       </Head>
       <div className={styles.pageContainer}>
-        <h1 className={styles.pageTitle}>Our Comprehensive Insurance Services</h1>
+        <h1 className={styles.pageTitle}>{t('servicesPage.title')}</h1>
         <div className={styles.serviceGrid}>
           {services.map((service, index) => (
             <ServiceCard key={index} {...service} />
@@ -48,7 +53,15 @@ export default function Services() {
       </div>
     </Layout>
   );
-      
+
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+    },
+  };
 }
 
 // components/ServiceCard.js (example)
