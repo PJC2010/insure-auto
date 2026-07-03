@@ -1,0 +1,25 @@
+.card {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+.title {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.description {
+  color: var(--muted-foreground);
+  font-size: 15px;
+  line-height: 1.65;
+}

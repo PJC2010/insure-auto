@@ -1,0 +1,253 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+}
+
+.glow {
+  position: absolute;
+  top: -220px;
+  right: -160px;
+  width: 640px;
+  height: 640px;
+  background: radial-gradient(
+    circle,
+    rgba(184, 134, 11, 0.16) 0%,
+    rgba(184, 134, 11, 0) 70%
+  );
+  pointer-events: none;
+}
+
+.heroInner {
+  position: relative;
+  max-width: var(--content-narrow);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.heroTitle {
+  font-size: clamp(40px, 5.5vw, 68px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.heroSubhead {
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+  max-width: 60ch;
+}
+
+.heroActions {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.stats {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--muted);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 56px 24px;
+  gap: 32px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.coverageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.viewAll {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 64px;
+  align-items: stretch;
+}
+
+.whyTitle {
+  font-size: 34px;
+  margin-bottom: 16px;
+}
+
+.whyLead {
+  color: var(--muted-foreground);
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 55ch;
+  margin-bottom: 40px;
+}
+
+.reasons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.reason {
+  display: flex;
+  gap: 20px;
+}
+
+.reasonNumber {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--accent);
+  padding-top: 4px;
+  flex-shrink: 0;
+}
+
+.reasonTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-family: var(--font-body);
+}
+
+.reasonDescription {
+  color: var(--muted-foreground);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.whyPanel {
+  border-radius: 8px;
+  background: linear-gradient(160deg, #1a1a1a 0%, #3a2f15 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 48px 24px;
+  min-height: 320px;
+}
+
+.panelValue {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--accent-secondary);
+}
+
+.panelLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.testimonial {
+  max-width: var(--content-narrow);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.quoteMark {
+  font-family: var(--font-display);
+  font-size: 96px;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.attribution {
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--muted-foreground);
+}
+
+.ctaBand {
+  background: var(--foreground);
+  color: #fff;
+  padding: 96px 0;
+}
+
+.ctaInner {
+  max-width: var(--content-narrow);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.ctaTitle {
+  font-size: clamp(28px, 4vw, 42px);
+  color: #fff;
+}
+
+.ctaSubtext {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 50ch;
+}
+
+@media (max-width: 900px) {
+  .whyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .coverageGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .coverageGrid {
+    grid-template-columns: 1fr;
+  }
+}
