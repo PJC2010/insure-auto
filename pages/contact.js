@@ -16,6 +16,8 @@ export default function Contact() {
     message: '',
   });
 
+  const [status, setStatus] = useState('idle'); // idle | submitting | success | error
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -23,15 +25,26 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Contact Form Data:', formData);
-    alert(t('contact.successBody'));
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-    });
+    setStatus('submitting');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Request failed');
+      setStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+      });
+    } catch (err) {
+      console.error('Contact form submission failed:', err);
+      setStatus('error');
+    }
   };
 
   return (
@@ -58,7 +71,16 @@ export default function Contact() {
               <h2 className="text-3xl font-bold mb-6 text-primary">
                 {t('contact.formTitle')}
               </h2>
+              {status === 'success' ? (
+                <div className="text-center py-8">
+                  <h3 className="text-2xl font-bold text-green-700 mb-2">{t('contact.successTitle')}</h3>
+                  <p className="text-neutral-700">{t('contact.successBody')}</p>
+                </div>
+              ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {status === 'error' && (
+                  <p className="text-red-600 font-semibold">{t('contact.errorBody')}</p>
+                )}
                 <div>
                   <label
                     htmlFor="name"
@@ -145,11 +167,13 @@ export default function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition-all duration-300 transform hover:scale-105"
+                  disabled={status === 'submitting'}
+                  className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition-all duration-300 transform hover:scale-105 disabled:opacity-60"
                 >
-                  {t('contact.submit')}
+                  {status === 'submitting' ? t('contact.submitting') : t('contact.submit')}
                 </button>
               </form>
+              )}
             </div>
 
             {/* Contact Information */}

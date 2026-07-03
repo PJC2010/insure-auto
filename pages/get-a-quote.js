@@ -18,6 +18,7 @@ export default function GetAQuote() {
     phone: '',
     // ... other dynamic fields based on quoteType
   });
+  const [status, setStatus] = useState('idle'); // idle | submitting | success | error
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,11 +37,21 @@ export default function GetAQuote() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Quote Request:', { quoteType, ...formData });
-    // Send to backend API for processing and lead generation
-    alert(t('getAQuote.successBody'));
-    setFormData({ fullName: '', email: '', phone: '' });
-    setQuoteType('');
+    setStatus('submitting');
+    try {
+      const res = await fetch('/api/quote-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ quoteType, ...formData }),
+      });
+      if (!res.ok) throw new Error('Request failed');
+      setStatus('success');
+      setFormData({ fullName: '', email: '', phone: '' });
+      setQuoteType('');
+    } catch (err) {
+      console.error('Quote request failed:', err);
+      setStatus('error');
+    }
   };
 
   return (
@@ -52,7 +63,16 @@ export default function GetAQuote() {
         </p>
 
         <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+          {status === 'success' ? (
+            <div className="text-center py-8">
+              <h2 className="text-2xl font-bold text-green-700 mb-2">{t('getAQuote.successTitle')}</h2>
+              <p className="text-gray-700">{t('getAQuote.successBody')}</p>
+            </div>
+          ) : (
           <form onSubmit={handleSubmit}>
+            {status === 'error' && (
+              <p className="mb-6 text-red-600 font-semibold">{t('getAQuote.errorBody')}</p>
+            )}
             <div className="mb-6">
               <label htmlFor="quoteType" className="block text-gray-700 text-sm font-bold mb-2">
                 {t('getAQuote.typeLabel')}
@@ -156,13 +176,15 @@ export default function GetAQuote() {
                 )}
                 <button
                   type="submit"
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg w-full focus:outline-none focus:shadow-outline transition-colors mt-8"
+                  disabled={status === 'submitting'}
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg w-full focus:outline-none focus:shadow-outline transition-colors mt-8 disabled:opacity-60"
                 >
-                  {t('getAQuote.submit')}
+                  {status === 'submitting' ? t('getAQuote.submitting') : t('getAQuote.submit')}
                 </button>
               </>
             )}
           </form>
+          )}
         </div>
       </div>
     </Layout>
