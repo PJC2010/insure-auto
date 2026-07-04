@@ -1,0 +1,24 @@
+/* Scroll reveal — "Lively" default from the design handoff.
+   Elements start hidden and shifted down, then settle into place when they
+   enter the viewport. */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* If motion is reduced (or JS never runs), never leave content stuck hidden. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

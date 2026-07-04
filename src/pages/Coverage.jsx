@@ -39,8 +39,8 @@ export default function Coverage() {
       <section className="section">
         <div className="container">
           <div className={styles.grid}>
-            {coverageCards.map((card) => (
-              <CoverageCard key={card.number} {...card} />
+            {coverageCards.map((card, index) => (
+              <CoverageCard key={card.number} index={index} {...card} />
             ))}
           </div>
 
