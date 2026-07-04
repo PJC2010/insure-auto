@@ -124,7 +124,7 @@ export default function Home() {
 
       <section className="section">
         <div className="container">
-          <SectionLabel>Client stories</SectionLabel>
+          <SectionLabel>Google reviews</SectionLabel>
           <div className={styles.testimonialGrid}>
             {testimonials.map((item) => (
               <figure className={`card ${styles.testimonialCard}`} key={item.attribution}>

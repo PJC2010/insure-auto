@@ -140,27 +140,28 @@ export const insuredWithOptions = [
   "Prefer not to say",
 ];
 
+// Verbatim Google reviews for InsureAuto Agency (Conroe, TX).
 export const testimonials = [
   {
     quote:
-      "Bundling our home and both cars with InsureAuto Agency cut our premium and gave us one person who actually picks up the phone. When a storm took our roof, they handled the claim start to finish.",
-    attribution: "Marisol & Dean Okafor",
-    detail: "Homeowners since 2016",
+      "I had Jaqueline help me get a policy for my new car. She went above and beyond to make sure I got everything I needed.. Not big on doing review's but she deserves to be recognized for her hard work and knowledge.",
+    attribution: "Hleidi “HeidiL” Lou",
+    detail: "Google review",
     rating: 5,
   },
   {
     quote:
-      "I called five \"discount\" sites and got five different sales pitches. InsureAuto Agency just ran the numbers across real carriers and showed me the trade-offs in plain English.",
-    attribution: "James Whitfield",
-    detail: "Personal auto since 2021",
+      "Excellent service from Vanessa, a great salesperson who is dedicated to her work. Honesty and charisma define someone who does things to the best of their ability, and you did a fantastic job. Thank you for your sales service.",
+    attribution: "Kevincito Aguinaga",
+    detail: "Google review · translated from Spanish",
     rating: 5,
   },
   {
     quote:
-      "Switching our delivery fleet over saved real money, but what kept us is the renewal call every year — they re-shop it instead of just billing us.",
-    attribution: "Priya Anand",
-    detail: "Commercial auto since 2019",
-    rating: 5,
+      "Excellent customer service. Credit where credit is due. Agent Jackie is someone who stands out for her kindness, simplicity, and excellent customer service, whether in person or over the phone.",
+    attribution: "Yanet Lopez",
+    detail: "Google review · translated from Spanish",
+    rating: 4,
   },
 ];
 
