@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import SectionLabel from "../components/SectionLabel";
+import Reveal from "../components/Reveal";
 import Seo from "../components/Seo";
 import {
   quoteChipOptions,
@@ -197,8 +198,13 @@ export default function Quote() {
           <aside className={styles.sidebar}>
             <SectionLabel>What to expect</SectionLabel>
             <ol className={styles.steps}>
-              {quoteSteps.map((step) => (
-                <li key={step.number} className={styles.step}>
+              {quoteSteps.map((step, index) => (
+                <Reveal
+                  as="li"
+                  key={step.number}
+                  index={index}
+                  className={styles.step}
+                >
                   <span className={styles.stepNumber}>{step.number}</span>
                   <div>
                     <h3 className={styles.stepTitle}>{step.title}</h3>
@@ -206,7 +212,7 @@ export default function Quote() {
                       {step.description}
                     </p>
                   </div>
-                </li>
+                </Reveal>
               ))}
             </ol>
 

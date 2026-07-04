@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SectionLabel from "../components/SectionLabel";
+import Reveal from "../components/Reveal";
 import Seo from "../components/Seo";
 import { aboutValues, siteUrl } from "../data/content";
 import styles from "./About.module.css";
@@ -49,12 +50,17 @@ export default function About() {
         <div className="container">
           <SectionLabel>What we stand for</SectionLabel>
           <ol className={styles.values}>
-            {aboutValues.map((value) => (
-              <li key={value.number} className={styles.value}>
+            {aboutValues.map((value, index) => (
+              <Reveal
+                as="li"
+                key={value.number}
+                index={index}
+                className={styles.value}
+              >
                 <span className={styles.valueNumber}>{value.number}</span>
                 <h3 className={styles.valueTitle}>{value.title}</h3>
                 <p className={styles.valueDescription}>{value.description}</p>
-              </li>
+              </Reveal>
             ))}
           </ol>
         </div>
