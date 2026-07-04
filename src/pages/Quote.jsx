@@ -43,7 +43,7 @@ export default function Quote() {
   return (
     <>
       <Seo
-        title="Get a Free Insurance Quote in Minutes | Insure-Auto"
+        title="Get a Free Insurance Quote in Minutes | InsureAuto Agency"
         description="Request a free auto, home, or commercial insurance quote. An independent broker compares 40+ carriers and responds with options within one business day."
         jsonLd={breadcrumbJsonLd}
       />
@@ -152,7 +152,7 @@ export default function Quote() {
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="(555) 012-3456"
+                      placeholder="(936) 555-0100"
                       autoComplete="tel"
                       required
                     />

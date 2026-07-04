@@ -56,8 +56,8 @@ export const homeCoverageCards = coverageCards.filter((c) =>
 export const homeStats = [
   { value: "3,200+", label: "Households & businesses" },
   { value: "40+", label: "Carrier partners" },
-  { value: "20 yrs", label: "Independent" },
-  { value: "4.9/5", label: "Client rating" },
+  { value: "[] yrs", label: "Independent" },
+  { value: "4.0/5", label: "Client rating" },
 ];
 
 export const whyIndependentReasons = [
@@ -143,14 +143,14 @@ export const insuredWithOptions = [
 export const testimonials = [
   {
     quote:
-      "Bundling our home and both cars with Insure-Auto cut our premium and gave us one person who actually picks up the phone. When a storm took our roof, they handled the claim start to finish.",
+      "Bundling our home and both cars with InsureAuto Agency cut our premium and gave us one person who actually picks up the phone. When a storm took our roof, they handled the claim start to finish.",
     attribution: "Marisol & Dean Okafor",
     detail: "Homeowners since 2016",
     rating: 5,
   },
   {
     quote:
-      "I called five \"discount\" sites and got five different sales pitches. Insure-Auto just ran the numbers across real carriers and showed me the trade-offs in plain English.",
+      "I called five \"discount\" sites and got five different sales pitches. InsureAuto Agency just ran the numbers across real carriers and showed me the trade-offs in plain English.",
     attribution: "James Whitfield",
     detail: "Personal auto since 2021",
     rating: 5,
@@ -193,16 +193,16 @@ export const faqs = [
   {
     question: "Which states are you licensed in?",
     answer:
-      "We're licensed to write personal and commercial policies in Oregon, Washington, California, and Idaho.",
+      "We're licensed to write personal and commercial policies in Texas.",
   },
 ];
 
 export const contact = {
-  phone: "(555) 012-3456",
-  phoneDigits: "+15550123456",
-  hours: "Mon–Fri, 8am–6pm",
+  phone: "(936) 494-2501",
+  phoneDigits: "+19364942501",
+  hours: "Mon–Fri, 9am–6pm",
   email: "hello@insure-auto.com",
-  address: "218 Larkspur Row, Portland, OR 97205",
+  address: "1108 N Loop 336 W, Conroe, TX 77301",
 };
 
 export const siteUrl = "https://www.insure-auto.com";

@@ -30,8 +30,8 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Auto & Home Insurance Quotes | Independent Broker | Insure-Auto"
-        description="Compare auto, home, and business insurance across 40+ carriers with one independent broker. Family-run since 2004. Free quotes back within one business day."
+        title="Auto & Home Insurance Quotes | Independent Broker | InsureAuto Agency"
+        description="Compare auto, home, and business insurance across 40+ carriers with one independent broker. Family-run since []. Free quotes back within one business day."
         jsonLd={faqJsonLd}
       />
       <section className={styles.hero}>
@@ -56,10 +56,9 @@ export default function Home() {
             </Link>
           </div>
           <div className={styles.heroTrust}>
-            <StarRating rating={5} />
+            <StarRating rating={4} />
             <span>
-              <strong>4.9/5</strong> from 312+ clients · Licensed OR · WA · CA
-              · ID
+              <strong>4.0/5</strong> from 12+ reviews · Licensed in TX
             </span>
           </div>
         </div>

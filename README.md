@@ -1,6 +1,6 @@
-# Insure-Auto
+# InsureAuto Agency
 
-Marketing site for Insure-Auto, an independent auto & home insurance brokerage. Built with React, Vite, and React Router.
+Marketing site for InsureAuto Agency, an independent auto & home insurance brokerage. Built with React, Vite, and React Router.
 
 ## Getting started
 

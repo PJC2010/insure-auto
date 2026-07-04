@@ -7,10 +7,10 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
-          <span className={styles.wordmark}>Insure-Auto</span>
+          <span className={styles.wordmark}>InsureAuto Agency</span>
           <p className={styles.blurb}>
             Independent auto &amp; home insurance brokers. Family-run since
-            2004, shopping the whole market for every client.
+            [], shopping the whole market for every client.
           </p>
         </div>
 
@@ -37,8 +37,8 @@ export default function Footer() {
       </div>
 
       <div className={`container ${styles.bottomBar}`}>
-        <span>© 2026 Insure-Auto Insurance Brokers</span>
-        <span>Licensed in OR · WA · CA · ID</span>
+        <span>© 2026 InsureAuto Agency</span>
+        <span>Licensed in TX</span>
       </div>
     </footer>
   );

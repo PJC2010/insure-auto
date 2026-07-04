@@ -13,8 +13,8 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         <NavLink to="/" className={styles.logo}>
-          <span className={styles.wordmark}>Insure-Auto</span>
-          <span className={styles.est}>Est. 2004</span>
+          <span className={styles.wordmark}>InsureAuto Agency</span>
+          <span className={styles.est}>Est. []</span>
         </NavLink>
 
         <nav className={styles.nav}>

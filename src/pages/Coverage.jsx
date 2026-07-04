@@ -18,7 +18,7 @@ export default function Coverage() {
   return (
     <>
       <Seo
-        title="Insurance Coverage: Auto, Home, Umbrella & More | Insure-Auto"
+        title="Insurance Coverage: Auto, Home, Umbrella & More | InsureAuto Agency"
         description="Personal auto, homeowners, renters, commercial auto, umbrella, landlord, and specialty coverage — shopped across 40+ carriers by an independent broker."
         jsonLd={breadcrumbJsonLd}
       />
