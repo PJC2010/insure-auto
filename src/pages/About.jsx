@@ -1,11 +1,26 @@
 import { Link } from "react-router-dom";
 import SectionLabel from "../components/SectionLabel";
-import { aboutValues } from "../data/content";
+import Seo from "../components/Seo";
+import { aboutValues, siteUrl } from "../data/content";
 import styles from "./About.module.css";
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "About", item: `${siteUrl}/about` },
+  ],
+};
 
 export default function About() {
   return (
     <>
+      <Seo
+        title="About Us | Family-Run Independent Broker Since 2004 | Insure-Auto"
+        description="Insure-Auto has shopped the insurance market on behalf of clients since 2004. Still family-run, still independent, still comparing 40+ carriers for every policy we place."
+        jsonLd={breadcrumbJsonLd}
+      />
       <section className={styles.header}>
         <div className="container">
           <SectionLabel>Our story</SectionLabel>

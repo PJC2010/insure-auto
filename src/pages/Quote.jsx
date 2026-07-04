@@ -1,13 +1,24 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import SectionLabel from "../components/SectionLabel";
+import Seo from "../components/Seo";
 import {
   quoteChipOptions,
   insuredWithOptions,
   quoteSteps,
   contact,
+  siteUrl,
 } from "../data/content";
 import styles from "./Quote.module.css";
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "Request a quote", item: `${siteUrl}/quote` },
+  ],
+};
 
 export default function Quote() {
   const [selectedCoverage, setSelectedCoverage] = useState([]);
@@ -23,18 +34,27 @@ export default function Quote() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    const form = event.currentTarget;
+    // Honeypot: real visitors never fill this hidden field, bots often do.
+    if (form.elements.company.value) return;
     setSubmitted(true);
   }
 
   return (
     <>
+      <Seo
+        title="Get a Free Insurance Quote in Minutes | Insure-Auto"
+        description="Request a free auto, home, or commercial insurance quote. An independent broker compares 40+ carriers and responds with options within one business day."
+        jsonLd={breadcrumbJsonLd}
+      />
       <section className={styles.header}>
         <div className="container">
           <SectionLabel>Request a quote</SectionLabel>
           <h1 className={styles.title}>Let&rsquo;s find your coverage.</h1>
           <p className={styles.intro}>
             Tell us a little about what you need covered, and a broker will
-            shop the market on your behalf.
+            shop the market on your behalf. Free, no obligation, and no
+            spam — ever.
           </p>
         </div>
       </section>
@@ -78,31 +98,70 @@ export default function Quote() {
                   </div>
                 </div>
 
+                <input
+                  type="text"
+                  name="company"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className={styles.honeypot}
+                  aria-hidden="true"
+                />
+
                 <div className="field-row">
                   <div className="field">
-                    <label>Full name</label>
-                    <input type="text" placeholder="Jordan Rivera" />
+                    <label htmlFor="fullName">Full name</label>
+                    <input
+                      id="fullName"
+                      name="fullName"
+                      type="text"
+                      placeholder="Jordan Rivera"
+                      autoComplete="name"
+                      required
+                    />
                   </div>
                   <div className="field">
-                    <label>ZIP code</label>
-                    <input type="text" placeholder="10001" />
+                    <label htmlFor="zip">ZIP code</label>
+                    <input
+                      id="zip"
+                      name="zip"
+                      type="text"
+                      inputMode="numeric"
+                      pattern="[0-9]{5}"
+                      placeholder="10001"
+                      autoComplete="postal-code"
+                      required
+                    />
                   </div>
                 </div>
 
                 <div className="field-row">
                   <div className="field">
-                    <label>Email</label>
-                    <input type="email" placeholder="you@email.com" />
+                    <label htmlFor="email">Email</label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="you@email.com"
+                      autoComplete="email"
+                      required
+                    />
                   </div>
                   <div className="field">
-                    <label>Phone</label>
-                    <input type="tel" placeholder="(555) 012-3456" />
+                    <label htmlFor="phone">Phone</label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="(555) 012-3456"
+                      autoComplete="tel"
+                      required
+                    />
                   </div>
                 </div>
 
                 <div className="field">
-                  <label>Currently insured with</label>
-                  <select defaultValue="">
+                  <label htmlFor="insuredWith">Currently insured with</label>
+                  <select id="insuredWith" name="insuredWith" defaultValue="">
                     <option value="" disabled>
                       Select one
                     </option>
@@ -115,12 +174,16 @@ export default function Quote() {
                 </div>
 
                 <div className="field">
-                  <label>Anything else we should know?</label>
-                  <textarea placeholder="Two drivers, a 2019 SUV, and a house built in 1998…" />
+                  <label htmlFor="notes">Anything else we should know?</label>
+                  <textarea
+                    id="notes"
+                    name="notes"
+                    placeholder="Two drivers, a 2019 SUV, and a house built in 1998…"
+                  />
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-block">
-                  Request my quote
+                  Request my quote — free, no obligation
                 </button>
 
                 <p className={styles.privacy}>

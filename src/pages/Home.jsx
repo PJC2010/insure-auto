@@ -1,17 +1,39 @@
 import { Link } from "react-router-dom";
 import SectionLabel from "../components/SectionLabel";
 import CoverageCard from "../components/CoverageCard";
+import StarRating from "../components/StarRating";
+import Faq from "../components/Faq";
+import Seo from "../components/Seo";
 import {
   homeStats,
   homeCoverageCards,
   whyIndependentReasons,
-  testimonial,
+  testimonials,
+  faqs,
 } from "../data/content";
 import styles from "./Home.module.css";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
 
 export default function Home() {
   return (
     <>
+      <Seo
+        title="Auto & Home Insurance Quotes | Independent Broker | Insure-Auto"
+        description="Compare auto, home, and business insurance across 40+ carriers with one independent broker. Family-run since 2004. Free quotes back within one business day."
+        jsonLd={faqJsonLd}
+      />
       <section className={styles.hero}>
         <div className={styles.glow} />
         <div className={`container ${styles.heroInner}`}>
@@ -32,6 +54,13 @@ export default function Home() {
             <Link to="/coverage" className="btn btn-secondary">
               Explore coverage
             </Link>
+          </div>
+          <div className={styles.heroTrust}>
+            <StarRating rating={5} />
+            <span>
+              <strong>4.9/5</strong> from 312+ clients · Licensed OR · WA · CA
+              · ID
+            </span>
           </div>
         </div>
       </section>
@@ -95,12 +124,28 @@ export default function Home() {
       </section>
 
       <section className="section">
-        <div className={`container ${styles.testimonial}`}>
-          <span className={styles.quoteMark}>&ldquo;</span>
-          <blockquote className={styles.quote}>
-            {testimonial.quote}
-          </blockquote>
-          <cite className={styles.attribution}>{testimonial.attribution}</cite>
+        <div className="container">
+          <SectionLabel>Client stories</SectionLabel>
+          <div className={styles.testimonialGrid}>
+            {testimonials.map((item) => (
+              <figure className={`card ${styles.testimonialCard}`} key={item.attribution}>
+                <StarRating rating={item.rating} />
+                <blockquote className={styles.quote}>{item.quote}</blockquote>
+                <figcaption className={styles.attribution}>
+                  {item.attribution}
+                  <span className={styles.attributionDetail}>{item.detail}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionLabel>Frequently asked</SectionLabel>
+          <h2 className={styles.faqTitle}>Answers before you ask.</h2>
+          <Faq items={faqs} />
         </div>
       </section>
 

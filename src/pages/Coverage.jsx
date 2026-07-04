@@ -1,12 +1,27 @@
 import { Link } from "react-router-dom";
 import SectionLabel from "../components/SectionLabel";
 import CoverageCard from "../components/CoverageCard";
-import { coverageCards } from "../data/content";
+import Seo from "../components/Seo";
+import { coverageCards, siteUrl } from "../data/content";
 import styles from "./Coverage.module.css";
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "Coverage", item: `${siteUrl}/coverage` },
+  ],
+};
 
 export default function Coverage() {
   return (
     <>
+      <Seo
+        title="Insurance Coverage: Auto, Home, Umbrella & More | Insure-Auto"
+        description="Personal auto, homeowners, renters, commercial auto, umbrella, landlord, and specialty coverage — shopped across 40+ carriers by an independent broker."
+        jsonLd={breadcrumbJsonLd}
+      />
       <section className={styles.header}>
         <div className={`container ${styles.headerInner}`}>
           <SectionLabel>Coverage</SectionLabel>
