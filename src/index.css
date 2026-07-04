@@ -74,6 +74,19 @@ img {
   .section {
     padding: 64px 0;
   }
+
+  main {
+    display: block;
+    padding-bottom: 76px;
+  }
+}
+
+.star-rating {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--accent);
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 /* Small-caps mono label used as a section eyebrow, paired with a divider line */

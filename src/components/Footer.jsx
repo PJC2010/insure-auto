@@ -30,9 +30,7 @@ export default function Footer() {
 
         <div className={styles.col}>
           <span className="label">Contact</span>
-          <a href={`tel:${contact.phone.replace(/[^\d+]/g, "")}`}>
-            {contact.phone}
-          </a>
+          <a href={`tel:${contact.phoneDigits}`}>{contact.phone}</a>
           <a href={`mailto:${contact.email}`}>{contact.email}</a>
           <span>{contact.address}</span>
         </div>

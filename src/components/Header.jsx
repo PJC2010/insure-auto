@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { contact } from "../data/content";
 import styles from "./Header.module.css";
 
 const navItems = [
@@ -31,9 +32,14 @@ export default function Header() {
           ))}
         </nav>
 
-        <NavLink to="/quote" className="btn btn-primary">
-          Request a quote
-        </NavLink>
+        <div className={styles.actions}>
+          <a href={`tel:${contact.phoneDigits}`} className={styles.phone}>
+            {contact.phone}
+          </a>
+          <NavLink to="/quote" className="btn btn-primary">
+            Request a quote
+          </NavLink>
+        </div>
       </div>
     </header>
   );
