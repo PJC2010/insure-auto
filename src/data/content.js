@@ -206,4 +206,28 @@ export const contact = {
   address: "1108 N Loop 336 W, Conroe, TX 77301",
 };
 
+// Greater Houston communities we write policies in. Rendered as on-page
+// text in the footer (a real local-SEO ranking signal, not just markup)
+// and mirrored into the InsuranceAgency schema's areaServed.
+export const areasServed = [
+  "Conroe",
+  "The Woodlands",
+  "Spring",
+  "Montgomery",
+  "Willis",
+  "Magnolia",
+  "Tomball",
+  "Cypress",
+  "Houston",
+  "Kingwood",
+  "Humble",
+  "Katy",
+  "Sugar Land",
+  "Pearland",
+];
+
+// Approximate coordinates of the Conroe office, used for geo meta tags
+// and the schema GeoCoordinates block.
+export const geo = { latitude: 30.3475, longitude: -95.4699 };
+
 export const siteUrl = "https://www.insure-auto.com";

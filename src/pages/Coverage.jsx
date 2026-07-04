@@ -18,8 +18,8 @@ export default function Coverage() {
   return (
     <>
       <Seo
-        title="Insurance Coverage: Auto, Home, Umbrella & More | InsureAuto Agency"
-        description="Personal auto, homeowners, renters, commercial auto, umbrella, landlord, and specialty coverage — shopped across 40+ carriers by an independent broker."
+        title="Insurance Coverage in Greater Houston: Auto, Home, Umbrella & More | InsureAuto Agency"
+        description="Personal auto, homeowners, renters, commercial auto, umbrella, landlord, and specialty coverage for Conroe, The Woodlands & Greater Houston — shopped across 40+ carriers by an independent broker."
         jsonLd={breadcrumbJsonLd}
       />
       <section className={styles.header}>
