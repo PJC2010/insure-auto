@@ -30,8 +30,8 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Auto & Home Insurance Quotes | Independent Broker | InsureAuto Agency"
-        description="Compare auto, home, and business insurance across 40+ carriers with one independent broker. Family-run since []. Free quotes back within one business day."
+        title="Auto & Home Insurance in Conroe & Greater Houston | InsureAuto Agency"
+        description="Compare auto, home, and business insurance across 40+ carriers with one independent broker serving Conroe, The Woodlands, Spring & Greater Houston. Family-run since []. Free quotes back within one business day."
         jsonLd={faqJsonLd}
       />
       <section className={styles.hero}>

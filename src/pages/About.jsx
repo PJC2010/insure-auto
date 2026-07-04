@@ -17,8 +17,8 @@ export default function About() {
   return (
     <>
       <Seo
-        title="About Us | Family-Run Independent Broker | InsureAuto Agency"
-        description="InsureAuto Agency has shopped the insurance market on behalf of clients since []. Still family-run, still independent, still comparing 40+ carriers for every policy we place."
+        title="About Us | Family-Run Independent Broker in Conroe, TX | InsureAuto Agency"
+        description="InsureAuto Agency has shopped the insurance market for Conroe & Greater Houston clients since []. Still family-run, still independent, still comparing 40+ carriers for every policy we place."
         jsonLd={breadcrumbJsonLd}
       />
       <section className={styles.header}>

@@ -43,8 +43,8 @@ export default function Quote() {
   return (
     <>
       <Seo
-        title="Get a Free Insurance Quote in Minutes | InsureAuto Agency"
-        description="Request a free auto, home, or commercial insurance quote. An independent broker compares 40+ carriers and responds with options within one business day."
+        title="Free Insurance Quote in Conroe & Greater Houston | InsureAuto Agency"
+        description="Request a free auto, home, or commercial insurance quote in Conroe, The Woodlands & Greater Houston. An independent broker compares 40+ carriers and responds with options within one business day."
         jsonLd={breadcrumbJsonLd}
       />
       <section className={styles.header}>

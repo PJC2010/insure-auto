@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { contact } from "../data/content";
+import { contact, areasServed } from "../data/content";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -34,6 +34,20 @@ export default function Footer() {
           <a href={`mailto:${contact.email}`}>{contact.email}</a>
           <span>{contact.address}</span>
         </div>
+      </div>
+
+      <div className={`container ${styles.areas}`}>
+        <span className="label">Serving Greater Houston</span>
+        <p className={styles.areaList}>
+          Proudly serving drivers and homeowners across{" "}
+          {areasServed.map((area, index) => (
+            <span key={area}>
+              {area}
+              {index < areasServed.length - 1 ? ", " : ""}
+            </span>
+          ))}{" "}
+          and the surrounding Greater Houston communities.
+        </p>
       </div>
 
       <div className={`container ${styles.bottomBar}`}>
