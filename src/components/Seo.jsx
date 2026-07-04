@@ -56,7 +56,7 @@ export default function Seo({ title, description, jsonLd }) {
     setLink("canonical", canonical);
 
     setMeta("property", "og:type", "website");
-    setMeta("property", "og:site_name", "Insure-Auto");
+    setMeta("property", "og:site_name", "InsureAuto Agency");
     setMeta("property", "og:title", title);
     setMeta("property", "og:description", description);
     setMeta("property", "og:url", canonical);
