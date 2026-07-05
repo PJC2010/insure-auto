@@ -3,13 +3,8 @@ import { Link } from "react-router-dom";
 import SectionLabel from "../components/SectionLabel";
 import Reveal from "../components/Reveal";
 import Seo from "../components/Seo";
-import {
-  quoteChipOptions,
-  insuredWithOptions,
-  quoteSteps,
-  contact,
-  siteUrl,
-} from "../data/content";
+import { contact, siteUrl } from "../data/content";
+import { useLanguage } from "../i18n/LanguageContext";
 import styles from "./Quote.module.css";
 
 const breadcrumbJsonLd = {
@@ -22,6 +17,8 @@ const breadcrumbJsonLd = {
 };
 
 export default function Quote() {
+  const { L } = useLanguage();
+  const t = L.quote;
   const [selectedCoverage, setSelectedCoverage] = useState([]);
   const [submitted, setSubmitted] = useState(false);
 
@@ -44,19 +41,15 @@ export default function Quote() {
   return (
     <>
       <Seo
-        title="Free Insurance Quote in Conroe & Greater Houston | InsureAuto Agency"
+        title={t.seoTitle}
         description="Request a free auto, home, or commercial insurance quote in Conroe, The Woodlands & Greater Houston. An independent broker compares 40+ carriers and responds with options within one business day."
         jsonLd={breadcrumbJsonLd}
       />
       <section className={styles.header}>
         <div className="container">
-          <SectionLabel>Request a quote</SectionLabel>
-          <h1 className={styles.title}>Let&rsquo;s find your coverage.</h1>
-          <p className={styles.intro}>
-            Tell us a little about what you need covered, and a broker will
-            shop the market on your behalf. Free, no obligation, and no
-            spam — ever.
-          </p>
+          <SectionLabel>{t.label}</SectionLabel>
+          <h1 className={styles.title}>{t.title}</h1>
+          <p className={styles.intro}>{t.intro}</p>
         </div>
       </section>
 
@@ -67,22 +60,19 @@ export default function Quote() {
               <div className={`card ${styles.confirmation}`}>
                 <span className={styles.quoteMark}>&ldquo;</span>
                 <h2 className={styles.confirmationTitle}>
-                  Request received.
+                  {t.confirmationTitle}
                 </h2>
-                <p className={styles.confirmationText}>
-                  Thank you. A broker from our team will be in touch within
-                  one business day with options tailored to what you told us.
-                </p>
+                <p className={styles.confirmationText}>{t.confirmationText}</p>
                 <Link to="/" className="btn btn-primary">
-                  Back to home
+                  {t.backHome}
                 </Link>
               </div>
             ) : (
               <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.field}>
-                  <label className="label">What should we quote?</label>
+                  <label className="label">{t.chipLabel}</label>
                   <div className={styles.chips}>
-                    {quoteChipOptions.map((option) => (
+                    {t.chipOptions.map((option) => (
                       <button
                         type="button"
                         key={option}
@@ -110,25 +100,25 @@ export default function Quote() {
 
                 <div className="field-row">
                   <div className="field">
-                    <label htmlFor="fullName">Full name</label>
+                    <label htmlFor="fullName">{t.fullName}</label>
                     <input
                       id="fullName"
                       name="fullName"
                       type="text"
-                      placeholder="Jordan Rivera"
+                      placeholder={t.fullNamePlaceholder}
                       autoComplete="name"
                       required
                     />
                   </div>
                   <div className="field">
-                    <label htmlFor="zip">ZIP code</label>
+                    <label htmlFor="zip">{t.zip}</label>
                     <input
                       id="zip"
                       name="zip"
                       type="text"
                       inputMode="numeric"
                       pattern="[0-9]{5}"
-                      placeholder="10001"
+                      placeholder={t.zipPlaceholder}
                       autoComplete="postal-code"
                       required
                     />
@@ -137,23 +127,23 @@ export default function Quote() {
 
                 <div className="field-row">
                   <div className="field">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">{t.email}</label>
                     <input
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="you@email.com"
+                      placeholder={t.emailPlaceholder}
                       autoComplete="email"
                       required
                     />
                   </div>
                   <div className="field">
-                    <label htmlFor="phone">Phone</label>
+                    <label htmlFor="phone">{t.phone}</label>
                     <input
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="(936) 555-0100"
+                      placeholder={t.phonePlaceholder}
                       autoComplete="tel"
                       required
                     />
@@ -161,12 +151,12 @@ export default function Quote() {
                 </div>
 
                 <div className="field">
-                  <label htmlFor="insuredWith">Currently insured with</label>
+                  <label htmlFor="insuredWith">{t.insuredWith}</label>
                   <select id="insuredWith" name="insuredWith" defaultValue="">
                     <option value="" disabled>
-                      Select one
+                      {t.insuredWithPlaceholder}
                     </option>
-                    {insuredWithOptions.map((option) => (
+                    {t.insuredWithOptions.map((option) => (
                       <option key={option} value={option}>
                         {option}
                       </option>
@@ -175,30 +165,27 @@ export default function Quote() {
                 </div>
 
                 <div className="field">
-                  <label htmlFor="notes">Anything else we should know?</label>
+                  <label htmlFor="notes">{t.notes}</label>
                   <textarea
                     id="notes"
                     name="notes"
-                    placeholder="Two drivers, a 2019 SUV, and a house built in 1998…"
+                    placeholder={t.notesPlaceholder}
                   />
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-block">
-                  Request my quote — free, no obligation
+                  {t.submit}
                 </button>
 
-                <p className={styles.privacy}>
-                  Your information is used only to prepare your quote and is
-                  never sold to third parties.
-                </p>
+                <p className={styles.privacy}>{t.privacy}</p>
               </form>
             )}
           </div>
 
           <aside className={styles.sidebar}>
-            <SectionLabel>What to expect</SectionLabel>
+            <SectionLabel>{t.sidebarLabel}</SectionLabel>
             <ol className={styles.steps}>
-              {quoteSteps.map((step, index) => (
+              {t.steps.map((step, index) => (
                 <Reveal
                   as="li"
                   key={step.number}
@@ -217,9 +204,9 @@ export default function Quote() {
             </ol>
 
             <div className={styles.contactBox}>
-              <span className={styles.contactLabel}>Prefer to talk?</span>
+              <span className={styles.contactLabel}>{t.contactPrompt}</span>
               <span className={styles.contactPhone}>{contact.phone}</span>
-              <span className={styles.contactHours}>{contact.hours}</span>
+              <span className={styles.contactHours}>{t.contactHours}</span>
             </div>
           </aside>
         </div>

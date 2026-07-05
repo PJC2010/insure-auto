@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import SectionLabel from "../components/SectionLabel";
 import Reveal from "../components/Reveal";
 import Seo from "../components/Seo";
-import { aboutValues, siteUrl } from "../data/content";
+import { siteUrl } from "../data/content";
+import { useLanguage } from "../i18n/LanguageContext";
 import styles from "./About.module.css";
 
 const breadcrumbJsonLd = {
@@ -15,32 +16,25 @@ const breadcrumbJsonLd = {
 };
 
 export default function About() {
+  const { L } = useLanguage();
+  const t = L.about;
+
   return (
     <>
       <Seo
-        title="About Us | Family-Run Independent Broker in Conroe, TX | InsureAuto Agency"
+        title={t.seoTitle}
         description="InsureAuto Agency has shopped the insurance market for Conroe & Greater Houston clients since []. Still family-run, still independent, still comparing 40+ carriers for every policy we place."
         jsonLd={breadcrumbJsonLd}
       />
       <section className={styles.header}>
         <div className="container">
-          <SectionLabel>Our story</SectionLabel>
+          <SectionLabel>{t.label}</SectionLabel>
           <div className={styles.intro}>
-            <h1 className={styles.title}>
-              Family-run, shopping the market on your behalf since [].
-            </h1>
+            <h1 className={styles.title}>{t.title}</h1>
             <div className={styles.introCopy}>
-              <p>
-                InsureAuto Agency was founded in [] on a simple idea: an
-                insurance brokerage should work for the client, not for a
-                single carrier. That idea still runs the business today.
-              </p>
-              <p>
-                We&rsquo;re still family-run, still independent, and still
-                comparing coverage across more than forty carriers so the
-                households and businesses we serve get the right policy —
-                not just the one on the shelf.
-              </p>
+              {t.introParagraphs.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
             </div>
           </div>
         </div>
@@ -48,9 +42,9 @@ export default function About() {
 
       <section className="section">
         <div className="container">
-          <SectionLabel>What we stand for</SectionLabel>
+          <SectionLabel>{t.valuesLabel}</SectionLabel>
           <ol className={styles.values}>
-            {aboutValues.map((value, index) => (
+            {t.values.map((value, index) => (
               <Reveal
                 as="li"
                 key={value.number}
@@ -68,11 +62,9 @@ export default function About() {
 
       <section className={styles.ctaBand}>
         <div className={`container ${styles.ctaInner}`}>
-          <h2 className={styles.ctaTitle}>
-            Ready to see what independent looks like?
-          </h2>
+          <h2 className={styles.ctaTitle}>{t.ctaTitle}</h2>
           <Link to="/quote" className="btn btn-primary">
-            Request a quote
+            {t.ctaButton}
           </Link>
         </div>
       </section>

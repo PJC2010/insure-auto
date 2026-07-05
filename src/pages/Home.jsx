@@ -6,19 +6,16 @@ import Faq from "../components/Faq";
 import Reveal from "../components/Reveal";
 import StatValue from "../components/StatValue";
 import Seo from "../components/Seo";
-import {
-  homeStats,
-  homeCoverageCards,
-  whyIndependentReasons,
-  testimonials,
-  faqs,
-} from "../data/content";
+import { useLanguage } from "../i18n/LanguageContext";
+import { translations } from "../i18n/translations";
 import styles from "./Home.module.css";
 
+// JSON-LD stays in English (the canonical, search-indexed language of the site)
+// regardless of the on-page language the visitor has chosen.
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
+  mainEntity: translations.en.faqs.map((faq) => ({
     "@type": "Question",
     name: faq.question,
     acceptedAnswer: {
@@ -28,11 +25,19 @@ const faqJsonLd = {
   })),
 };
 
+const HOME_COVERAGE_NUMBERS = ["01", "02", "04"];
+
 export default function Home() {
+  const { L } = useLanguage();
+  const t = L.home;
+  const homeCoverageCards = L.coverageCards.filter((c) =>
+    HOME_COVERAGE_NUMBERS.includes(c.number)
+  );
+
   return (
     <>
       <Seo
-        title="Auto & Home Insurance in Conroe & Greater Houston | InsureAuto Agency"
+        title={t.seoTitle}
         description="Compare auto, home, and business insurance across 40+ carriers with one independent broker serving Conroe, The Woodlands, Spring & Greater Houston. Family-run since []. Free quotes back within one business day."
         jsonLd={faqJsonLd}
       />
@@ -40,29 +45,27 @@ export default function Home() {
         <div className={styles.glow} />
         <div className={`container ${styles.heroInner}`}>
           <Reveal as="span" index={0} className="label">
-            Independent Auto &amp; Home Brokers
+            {t.heroLabel}
           </Reveal>
           <Reveal as="h1" index={1} className={styles.heroTitle}>
-            Insurance built around the life you&rsquo;ve built.
+            {t.heroTitle}
           </Reveal>
           <Reveal as="p" index={2} className={styles.heroSubhead}>
-            We&rsquo;re an independent brokerage — not tied to any single
-            carrier. We compare coverage across dozens of insurers and bring
-            back the policy that actually fits your life, at a price that
-            makes sense.
+            {t.heroSubhead}
           </Reveal>
           <Reveal index={3} className={styles.heroActions}>
             <Link to="/quote" className="btn btn-primary">
-              Request a quote
+              {t.heroCtaPrimary}
             </Link>
             <Link to="/coverage" className="btn btn-secondary">
-              Explore coverage
+              {t.heroCtaSecondary}
             </Link>
           </Reveal>
           <Reveal index={4} className={styles.heroTrust}>
             <StarRating rating={4} />
             <span>
-              <strong>4.0/5</strong> from 12+ reviews · Licensed in TX
+              <strong>{t.heroTrustStrong}</strong>
+              {t.heroTrustRest}
             </span>
           </Reveal>
         </div>
@@ -70,7 +73,7 @@ export default function Home() {
 
       <section className={styles.stats}>
         <div className={`container ${styles.statsGrid}`}>
-          {homeStats.map((stat, index) => (
+          {t.stats.map((stat, index) => (
             <Reveal key={stat.label} index={index} className={styles.stat}>
               <StatValue
                 className={styles.statValue}
@@ -85,14 +88,14 @@ export default function Home() {
 
       <section className="section">
         <div className="container">
-          <SectionLabel>What we cover</SectionLabel>
+          <SectionLabel>{t.coverageLabel}</SectionLabel>
           <div className={styles.coverageGrid}>
             {homeCoverageCards.map((card, index) => (
               <CoverageCard key={card.number} index={index} {...card} />
             ))}
           </div>
           <Link to="/coverage" className={styles.viewAll}>
-            View all coverage →
+            {t.viewAll}
           </Link>
         </div>
       </section>
@@ -100,17 +103,13 @@ export default function Home() {
       <section className="section">
         <div className={`container ${styles.whyGrid}`}>
           <div className={styles.whyCopy}>
-            <SectionLabel>Why independent</SectionLabel>
+            <SectionLabel>{t.whyLabel}</SectionLabel>
             <Reveal as="h2" className={styles.whyTitle}>
-              One broker, the whole market.
+              {t.whyTitle}
             </Reveal>
-            <p className={styles.whyLead}>
-              Captive agents can only sell you what their one carrier offers.
-              We work for you, not a carrier — so every recommendation is
-              built around your risk, not a sales quota.
-            </p>
+            <p className={styles.whyLead}>{t.whyLead}</p>
             <ol className={styles.reasons}>
-              {whyIndependentReasons.map((reason, index) => (
+              {t.whyReasons.map((reason, index) => (
                 <Reveal
                   as="li"
                   key={reason.number}
@@ -131,17 +130,17 @@ export default function Home() {
           <div className={styles.whyPanel}>
             <span className={`${styles.panelRing} ${styles.panelRingOuter}`} />
             <span className={`${styles.panelRing} ${styles.panelRingInner}`} />
-            <span className={styles.panelValue}>40+</span>
-            <span className={styles.panelLabel}>Carriers compared</span>
+            <span className={styles.panelValue}>{t.panelValue}</span>
+            <span className={styles.panelLabel}>{t.panelLabel}</span>
           </div>
         </div>
       </section>
 
       <section className="section">
         <div className="container">
-          <SectionLabel>Google reviews</SectionLabel>
+          <SectionLabel>{t.reviewsLabel}</SectionLabel>
           <div className={styles.testimonialGrid}>
-            {testimonials.map((item, index) => (
+            {L.testimonials.map((item, index) => (
               <Reveal
                 as="figure"
                 className={`card ${styles.testimonialCard}`}
@@ -162,25 +161,22 @@ export default function Home() {
 
       <section className="section">
         <div className="container">
-          <SectionLabel>Frequently asked</SectionLabel>
+          <SectionLabel>{t.faqLabel}</SectionLabel>
           <Reveal as="h2" className={styles.faqTitle}>
-            Answers before you ask.
+            {t.faqTitle}
           </Reveal>
-          <Faq items={faqs} />
+          <Faq items={L.faqs} />
         </div>
       </section>
 
       <section className={styles.ctaBand}>
         <div className={`container ${styles.ctaInner}`}>
           <Reveal as="h2" className={styles.ctaTitle}>
-            Fifteen minutes now can save you all year.
+            {t.ctaTitle}
           </Reveal>
-          <p className={styles.ctaSubtext}>
-            Send us the basics and a broker will have options back to you
-            within one business day.
-          </p>
+          <p className={styles.ctaSubtext}>{t.ctaSubtext}</p>
           <Link to="/quote" className="btn btn-primary">
-            Request a quote
+            {t.ctaButton}
           </Link>
         </div>
       </section>

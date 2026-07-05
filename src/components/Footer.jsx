@@ -1,35 +1,36 @@
 import { Link } from "react-router-dom";
 import { contact, areasServed } from "../data/content";
+import { useLanguage } from "../i18n/LanguageContext";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const { L } = useLanguage();
+  const t = L.footer;
+
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
           <span className={styles.wordmark}>InsureAuto Agency</span>
-          <p className={styles.blurb}>
-            Independent auto &amp; home insurance brokers. Family-run since
-            [], shopping the whole market for every client.
-          </p>
+          <p className={styles.blurb}>{t.blurb}</p>
         </div>
 
         <div className={styles.col}>
-          <span className="label">Coverage</span>
-          <Link to="/coverage">Personal auto</Link>
-          <Link to="/coverage">Homeowners</Link>
-          <Link to="/coverage">Commercial auto</Link>
-          <Link to="/coverage">All coverage</Link>
+          <span className="label">{t.coverageLabel}</span>
+          <Link to="/coverage">{t.coverageLinks.personalAuto}</Link>
+          <Link to="/coverage">{t.coverageLinks.homeowners}</Link>
+          <Link to="/coverage">{t.coverageLinks.commercialAuto}</Link>
+          <Link to="/coverage">{t.coverageLinks.all}</Link>
         </div>
 
         <div className={styles.col}>
-          <span className="label">Company</span>
-          <Link to="/about">Our story</Link>
-          <Link to="/quote">Request a quote</Link>
+          <span className="label">{t.companyLabel}</span>
+          <Link to="/about">{t.companyLinks.story}</Link>
+          <Link to="/quote">{t.companyLinks.quote}</Link>
         </div>
 
         <div className={styles.col}>
-          <span className="label">Contact</span>
+          <span className="label">{t.contactLabel}</span>
           <a href={`tel:${contact.phoneDigits}`}>{contact.phone}</a>
           <a href={`mailto:${contact.email}`}>{contact.email}</a>
           <span>{contact.address}</span>
@@ -37,22 +38,22 @@ export default function Footer() {
       </div>
 
       <div className={`container ${styles.areas}`}>
-        <span className="label">Serving Greater Houston</span>
+        <span className="label">{t.areasLabel}</span>
         <p className={styles.areaList}>
-          Proudly serving drivers and homeowners across{" "}
+          {t.areasPrefix}{" "}
           {areasServed.map((area, index) => (
             <span key={area}>
               {area}
               {index < areasServed.length - 1 ? ", " : ""}
             </span>
           ))}{" "}
-          and the surrounding Greater Houston communities.
+          {t.areasSuffix}
         </p>
       </div>
 
       <div className={`container ${styles.bottomBar}`}>
-        <span>© 2026 InsureAuto Agency</span>
-        <span>Licensed in TX</span>
+        <span>{t.copyright}</span>
+        <span>{t.licensed}</span>
       </div>
     </footer>
   );
