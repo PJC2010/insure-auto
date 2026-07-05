@@ -99,4 +99,14 @@
   .phone {
     display: none;
   }
+
+  /* On mobile the sticky bottom bar already offers a quote button, so drop
+     the header one and let the language toggle stay prominent. */
+  .quoteBtn {
+    display: none;
+  }
+
+  .actions {
+    gap: 12px;
+  }
 }

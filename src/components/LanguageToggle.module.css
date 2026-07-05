@@ -1,0 +1,83 @@
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.globe {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* The slider track: a pill with a knob that slides between EN and ES. */
+.track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  width: 92px;
+  height: 38px;
+  border: 1.5px solid var(--accent);
+  border-radius: 999px;
+  background: var(--muted);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(184, 134, 11, 0.18);
+  transition: box-shadow 200ms ease-out, background-color 200ms ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.track:hover {
+  box-shadow: 0 4px 14px rgba(184, 134, 11, 0.3);
+}
+
+.track:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.35);
+}
+
+/* Sliding knob — sits under the active label. */
+.knob {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 2px 6px rgba(184, 134, 11, 0.4);
+  transform: translateX(0);
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.trackEs .knob {
+  transform: translateX(100%);
+}
+
+.option {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+  user-select: none;
+  transition: color 200ms ease-out;
+}
+
+.optionActive {
+  color: #ffffff;
+}
+
+@media (max-width: 720px) {
+  .globe {
+    display: none;
+  }
+
+  .track {
+    width: 84px;
+    height: 36px;
+  }
+}
