@@ -38,7 +38,12 @@ export default function Coverage() {
         <div className="container">
           <div className={styles.grid}>
             {L.coverageCards.map((card, index) => (
-              <CoverageCard key={card.number} index={index} {...card} />
+              <CoverageCard
+                key={card.number}
+                index={index}
+                addPhotoLabel={L.coverageCardAddPhoto}
+                {...card}
+              />
             ))}
           </div>
 

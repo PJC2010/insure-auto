@@ -14,8 +14,9 @@ export const translations = {
       coverage: "Coverage",
       about: "About",
     },
+    coverageCardAddPhoto: "Add a photo",
     header: {
-      est: "Est. []",
+      est: "Est. 2000",
       requestQuote: "Request a quote",
     },
     languageToggle: {
@@ -27,48 +28,56 @@ export const translations = {
       {
         number: "01",
         title: "Personal Auto",
+        imageHint: "Photo of a car",
         description:
           "Liability, collision, and comprehensive for the cars you drive every day — with the deductibles that fit your budget.",
       },
       {
         number: "02",
         title: "Homeowners",
+        imageHint: "Photo of a home",
         description:
           "Protect your home's structure, your belongings, and the people under your roof against fire, theft, and storms.",
       },
       {
         number: "03",
         title: "Renters",
+        imageHint: "Photo of an apartment",
         description:
           "Affordable protection for your belongings and personal liability, wherever you rent — often under a dollar a day.",
       },
       {
         number: "04",
         title: "Commercial Auto",
+        imageHint: "Photo of a work van",
         description:
           "Vehicles, drivers, and cargo for the businesses on the move — from a single work van to a full delivery fleet.",
       },
       {
         number: "05",
         title: "Bundle: Auto + Home",
+        imageHint: "Photo of a car & home",
         description:
           "Combine your policies under one broker and unlock multi-policy discounts on both — with a single renewal to track.",
       },
       {
         number: "06",
         title: "Umbrella",
+        imageHint: "Photo of an umbrella",
         description:
           "Extra liability limits that sit above your auto and home policies for the claims that run past your primary coverage.",
       },
       {
         number: "07",
         title: "Landlord & Rental",
+        imageHint: "Photo of a rental home",
         description:
           "Dwelling, liability, and loss-of-rent coverage for the properties you rent to others — one door or many.",
       },
       {
         number: "08",
         title: "Specialty & Recreational",
+        imageHint: "Photo of a classic car",
         description:
           "Classic cars, motorcycles, boats, and RVs — the vehicles that need coverage built for how you actually use them.",
       },
@@ -141,7 +150,7 @@ export const translations = {
       stats: [
         { value: "3,200+", label: "Households & businesses" },
         { value: "40+", label: "Carrier partners" },
-        { value: "[] yrs", label: "Independent" },
+        { value: "26 yrs", label: "Independent" },
         { value: "4.0/5", label: "Client rating" },
       ],
       coverageLabel: "What we cover",
@@ -196,9 +205,9 @@ export const translations = {
       seoTitle:
         "About Us | Family-Run Independent Broker in Conroe, TX | InsureAuto Agency",
       label: "Our story",
-      title: "Family-run, shopping the market on your behalf since [].",
+      title: "Family-run, shopping the market on your behalf since 2000.",
       introParagraphs: [
-        "InsureAuto Agency was founded in [] on a simple idea: an insurance brokerage should work for the client, not for a single carrier. That idea still runs the business today.",
+        "InsureAuto Agency was founded in 2000 on a simple idea: an insurance brokerage should work for the client, not for a single carrier. That idea still runs the business today.",
         "We’re still family-run, still independent, and still comparing coverage across more than forty carriers so the households and businesses we serve get the right policy — not just the one on the shelf.",
       ],
       valuesLabel: "What we stand for",
@@ -293,7 +302,7 @@ export const translations = {
     },
     footer: {
       blurb:
-        "Independent auto & home insurance brokers. Family-run since [], shopping the whole market for every client.",
+        "Independent auto & home insurance brokers. Family-run since 2000, shopping the whole market for every client.",
       coverageLabel: "Coverage",
       coverageLinks: {
         personalAuto: "Personal auto",
@@ -326,8 +335,9 @@ export const translations = {
       coverage: "Coberturas",
       about: "Nosotros",
     },
+    coverageCardAddPhoto: "Agregar una foto",
     header: {
-      est: "Desde []",
+      est: "Desde 2000",
       requestQuote: "Solicitar cotización",
     },
     languageToggle: {
@@ -338,48 +348,56 @@ export const translations = {
       {
         number: "01",
         title: "Auto Personal",
+        imageHint: "Foto de un auto",
         description:
           "Responsabilidad civil, colisión y cobertura amplia para los autos que maneja a diario — con los deducibles que se ajustan a su presupuesto.",
       },
       {
         number: "02",
         title: "Propietarios de Vivienda",
+        imageHint: "Foto de una casa",
         description:
           "Proteja la estructura de su casa, sus pertenencias y a quienes viven bajo su techo contra incendios, robos y tormentas.",
       },
       {
         number: "03",
         title: "Inquilinos",
+        imageHint: "Foto de un apartamento",
         description:
           "Protección accesible para sus pertenencias y su responsabilidad personal, dondequiera que rente — a menudo por menos de un dólar al día.",
       },
       {
         number: "04",
         title: "Auto Comercial",
+        imageHint: "Foto de una camioneta",
         description:
           "Vehículos, conductores y carga para los negocios en movimiento — desde una sola camioneta de trabajo hasta una flota de reparto completa.",
       },
       {
         number: "05",
         title: "Paquete: Auto + Hogar",
+        imageHint: "Foto de auto y casa",
         description:
           "Combine sus pólizas con un solo corredor y obtenga descuentos por múltiples pólizas en ambas — con una sola renovación que atender.",
       },
       {
         number: "06",
         title: "Paraguas (Umbrella)",
+        imageHint: "Foto de un paraguas",
         description:
           "Límites de responsabilidad adicionales por encima de sus pólizas de auto y hogar para los reclamos que superan su cobertura principal.",
       },
       {
         number: "07",
         title: "Arrendador y Renta",
+        imageHint: "Foto de una casa de renta",
         description:
           "Cobertura de vivienda, responsabilidad y pérdida de renta para las propiedades que renta a otros — una puerta o muchas.",
       },
       {
         number: "08",
         title: "Especializada y Recreativa",
+        imageHint: "Foto de un auto clásico",
         description:
           "Autos clásicos, motocicletas, botes y casas rodantes — los vehículos que necesitan una cobertura hecha para como realmente los usa.",
       },
@@ -453,7 +471,7 @@ export const translations = {
       stats: [
         { value: "3,200+", label: "Hogares y negocios" },
         { value: "40+", label: "Aseguradoras aliadas" },
-        { value: "[] años", label: "Independientes" },
+        { value: "26 años", label: "Independientes" },
         { value: "4.0/5", label: "Calificación de clientes" },
       ],
       coverageLabel: "Lo que cubrimos",
@@ -508,9 +526,9 @@ export const translations = {
       seoTitle:
         "Nosotros | Corredor Independiente de Familia en Conroe, TX | InsureAuto Agency",
       label: "Nuestra historia",
-      title: "De familia, comparando el mercado por usted desde [].",
+      title: "De familia, comparando el mercado por usted desde 2000.",
       introParagraphs: [
-        "InsureAuto Agency se fundó en [] con una idea simple: una correduría de seguros debe trabajar para el cliente, no para una sola aseguradora. Esa idea sigue guiando el negocio hoy.",
+        "InsureAuto Agency se fundó en 2000 con una idea simple: una correduría de seguros debe trabajar para el cliente, no para una sola aseguradora. Esa idea sigue guiando el negocio hoy.",
         "Seguimos siendo de familia, seguimos siendo independientes y seguimos comparando coberturas entre más de cuarenta aseguradoras para que los hogares y negocios que atendemos obtengan la póliza correcta — no solo la que está en el estante.",
       ],
       valuesLabel: "Lo que representamos",
@@ -606,7 +624,7 @@ export const translations = {
     },
     footer: {
       blurb:
-        "Corredores independientes de seguros de auto y hogar. De familia desde [], comparando todo el mercado para cada cliente.",
+        "Corredores independientes de seguros de auto y hogar. De familia desde 2000, comparando todo el mercado para cada cliente.",
       coverageLabel: "Coberturas",
       coverageLinks: {
         personalAuto: "Auto personal",

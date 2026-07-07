@@ -23,7 +23,7 @@ export default function About() {
     <>
       <Seo
         title={t.seoTitle}
-        description="InsureAuto Agency has shopped the insurance market for Conroe & Greater Houston clients since []. Still family-run, still independent, still comparing 40+ carriers for every policy we place."
+        description="InsureAuto Agency has shopped the insurance market for Conroe & Greater Houston clients since 2000. Still family-run, still independent, still comparing 40+ carriers for every policy we place."
         jsonLd={breadcrumbJsonLd}
       />
       <section className={styles.header}>

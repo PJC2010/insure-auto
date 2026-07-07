@@ -38,7 +38,7 @@ export default function Home() {
     <>
       <Seo
         title={t.seoTitle}
-        description="Compare auto, home, and business insurance across 40+ carriers with one independent broker serving Conroe, The Woodlands, Spring & Greater Houston. Family-run since []. Free quotes back within one business day."
+        description="Compare auto, home, and business insurance across 40+ carriers with one independent broker serving Conroe, The Woodlands, Spring & Greater Houston. Family-run since 2000. Free quotes back within one business day."
         jsonLd={faqJsonLd}
       />
       <section className={styles.hero}>
@@ -91,7 +91,12 @@ export default function Home() {
           <SectionLabel>{t.coverageLabel}</SectionLabel>
           <div className={styles.coverageGrid}>
             {homeCoverageCards.map((card, index) => (
-              <CoverageCard key={card.number} index={index} {...card} />
+              <CoverageCard
+                key={card.number}
+                index={index}
+                addPhotoLabel={L.coverageCardAddPhoto}
+                {...card}
+              />
             ))}
           </div>
           <Link to="/coverage" className={styles.viewAll}>
